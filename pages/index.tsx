@@ -1,13 +1,29 @@
-import {
-  Box,
-  Button
-} from '@chakra-ui/react'
+import { useEffect } from "react";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+
+const FixedBG = dynamic(() => import('@/components/Fixed BG'), { ssr: false })
+const NavBar = dynamic(() => import('@/components/Nav Bar'), { ssr: false })
+const HomeLand = dynamic(() => import('@/components/Home Land'), { ssr: false })
 
 function Home() {
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--height', `${window.innerHeight}px`)
+    window.addEventListener('resize', () => {
+      document.documentElement.style.setProperty('--height', `${window.innerHeight}px`)
+    })
+  })
+
   return (
-    <Box h={'500px'}>
-      <Button variant={'primary-60'}>asdasasd</Button>
-    </Box>
+    <>
+      <Head>
+        <title>Less Boring-ify Trees</title>
+      </Head>
+      <FixedBG />
+      <NavBar />
+      <HomeLand />
+    </>
   )
 }
 

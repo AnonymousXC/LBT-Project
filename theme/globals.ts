@@ -2,15 +2,16 @@
 
 const Colors = {
     light: {
-        '--bg-default': '#FFFFFF',
-        '--fg-default': '#000000',
+        '--bg-default': '#000',
+        '--fg-default': '#fff',
         '--fg-secondary': '#ffffff',
         '--green-default': '#259422',
         '--button-primary-bg': '#15AB90',
     },
+    //
     dark: {
         '--bg-default': '#000000',
-        '--fg-default': '#000000',
+        '--fg-default': '#ffffff',
         '--fg-secondary': '#ffffff',
         '--green-default': '#259422',
         '--button-primary-bg': '#15AB90'
@@ -46,6 +47,7 @@ const styles = {
     global: {
         body: {
             backgroundColor: 'bg-default',
+            color: 'fg-default'
         }
     }
 }
