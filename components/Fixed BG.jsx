@@ -23,7 +23,7 @@ const FixedBG = () => {
             position={'fixed'}
             top={'0px'}
             left={'0px'}
-            zIndex={0}
+            zIndex={-5}
             className={'Animated-BG'}>
 
             <Box className={styles.leaf + ' leaf-div'}>

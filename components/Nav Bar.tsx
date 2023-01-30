@@ -28,7 +28,7 @@ function NavBarMobile() {
             position={'fixed'}
             top={'0px'}
             left={'0px'}
-            backgroundColor={'#000'}
+            backgroundColor={isMenuOpen ? '#000' : 'transparent'}
             color={'#fff'}
             zIndex={1000}
             alignItems={'center'}

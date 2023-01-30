@@ -5,6 +5,7 @@ import Head from "next/head";
 const FixedBG = dynamic(() => import('@/components/Fixed BG'), { ssr: false })
 const NavBar = dynamic(() => import('@/components/Nav Bar'), { ssr: false })
 const HomeLand = dynamic(() => import('@/components/Home Land'), { ssr: false })
+const HomeSection2 = dynamic(() => import('@/components/Home Section 2'), { ssr : false })
 
 function Home() {
 
@@ -23,6 +24,7 @@ function Home() {
       <FixedBG />
       <NavBar />
       <HomeLand />
+      <HomeSection2 />
     </>
   )
 }
