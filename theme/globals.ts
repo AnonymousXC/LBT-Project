@@ -47,7 +47,7 @@ const styles = {
     global: {
         body: {
             backgroundColor: 'bg-default',
-            color: 'fg-default'
+            color: 'fg-default',
         }
     }
 }

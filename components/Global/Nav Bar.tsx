@@ -35,9 +35,13 @@ function NavBarMobile() {
             justifyContent={'space-between'}
             px={'16px'}
             className={'nav-bar-mobile'}>
-                <Flex gap={'12px'}>
-                    <Image src={'images/Logo.svg'} w={'58px'} />
-                    <Image src={'images/Lbt.svg'} />
+                <Flex gap={'12px'} justifyContent={'center'} alignItems={'center'}>
+                    <Image src={'images/Logo.png'} w={'58px'} h={'58px'} rounded={'full'} />
+                    <Flex>
+                        <Text variant={'variex-ff'}>L</Text>
+                        <Text variant={'variex-ff'} color={'#B6CE97'} >b</Text>
+                        <Text variant={'variex-ff'} color={'#75A638'} >t</Text>
+                    </Flex>
                 </Flex>
                 <Button variant={'unstyled'} 
                 display={'flex'}

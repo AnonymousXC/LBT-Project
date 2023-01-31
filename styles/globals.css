@@ -5,3 +5,20 @@ select,
 a {
     -webkit-tap-highlight-color: transparent;
 }
+
+@font-face {
+    font-family: 'Variex';
+    src: url('../fonts/Variex Regular.ttf');
+}
+
+.trust-us-slider .slick-slide > div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-slider .slick-slide > div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
