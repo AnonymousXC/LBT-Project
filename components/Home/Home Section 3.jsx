@@ -2,11 +2,14 @@ import {
     Box,
     Flex,
     Text,
+    Image,
+    Button,
     Heading,
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 
 var sliderSetting = {
     dots: false,
@@ -29,8 +32,8 @@ var sliderSettionTeam = {
     className: 'team-slider'
 }
 
-function Section3() {
 
+function Section3() {
 
     return (
         <Flex
@@ -41,60 +44,67 @@ function Section3() {
             direction={'column'}
             className={'section-3'}>
             <Heading variant={'h2'}> Institutions that trust us </Heading>
-            <Box w={'85%'} mt={'34px'}>
+            <Box w={'85%'} mt={'52px'}>
                 <Slider {...sliderSetting}>
-                    <SliderContentInstution />
-                    <SliderContentInstution />
-                    <SliderContentInstution />
-                    <SliderContentInstution />
-                    <SliderContentInstution />
-                    <SliderContentInstution />
+                    <SliderContentInstution img='https://i.ibb.co/8B0VcF2/Xartup.png' />
+                    <SliderContentInstution img='https://i.ibb.co/7JZBfPN/IAF.jpg' />
+                    <SliderContentInstution img='https://i.ibb.co/xzFFn1H/SCS.jpg' />
+                    <SliderContentInstution img='https://i.ibb.co/t2XVhPh/Social-Shifters.png' />
                 </Slider>
             </Box>
             <Heading variant={'h2'} mt={'47px'}> Meet our team! </Heading>
-            <Box w={'85%'} mt={'50px'} h={'250px'}>
+            <Box w={'85%'} mt={'50px'}>
                 <Slider {...sliderSettionTeam}>
-                    <SliderContentTeam />
-                    <SliderContentTeam />
-                    <SliderContentTeam />
-                    <SliderContentTeam />
-                    <SliderContentTeam />
-                    <SliderContentTeam />  
+                    <SliderContentTeam name={'Vedant Kumar'} position={'Founder'} />
+                    <SliderContentTeam name={'Vedant Kumar'} position={'Founder'} />
+                    <SliderContentTeam name={'Vedant Kumar'} position={'Founder'} />
+                    <SliderContentTeam name={'Vedant Kumar'} position={'Founder'} />
+                    <SliderContentTeam name={'Vedant Kumar'} position={'Founder'} />
+                    <SliderContentTeam name={'Vedant Kumar'} position={'Founder'} />  
                 </Slider>
             </Box>
         </Flex>
     )
 }
 
-function SliderContentInstution(img) {
+function SliderContentInstution({img}) {
     return (
         <Box
         w={'68px'}
         h={'68px'}
         backgroundColor={'#fff'}>
-
+            <Image src={img} />
         </Box>
     )
 }
 
-function SliderContentTeam(name) {
+function SliderContentTeam({name, position}) {
     return(
         <Flex 
-        w={'234px'} 
-        h={'234px'}
+        w={'95%'} 
+        maxW={'300px'}
         backgroundColor={'green-default'}
         rounded={'10px'}
         border={'5px solid #1C7E8B'}
         alignItems={'center'}
         gap={'5px'}
-        direction={'column'}
-        key={'team' + Math.random()}>
+        direction={'column'}>
             <Box w={'96px'} h={'96px'} rounded={'full'} backgroundColor={'#D9D9D9'} mt={'14px'}></Box>
-            <Text color={'#000'} fontWeight={'700'} mt={'4px'}>Vedant Kumar</Text>
-            <Text color={'#601818'} fontWeight={'700'} >Founder</Text>
-            <Flex mt={'12px'}>
-                Socials
+            <Text color={'#000'} fontWeight={'700'} mt={'4px'}>{name}</Text>
+            <Text color={'#601818'} fontWeight={'700'} >{position}</Text>
+            <Flex mt={'12px'} gap={'16px'}>
+                <Button variant={'unstyled'} w={'30px'} h={'30px'} _hover={{transform: 'scale(1.1)'}}>
+                    <Image src={'sm/LinkedIn.png'} />
+                </Button>
+                <Button variant={'unstyled'} w={'30px'} h={'30px'} _hover={{transform: 'scale(1.1)'}}>
+                    <Image src={'sm/Instagram.png'} />
+                </Button>
+                <Button variant={'unstyled'} w={'30px'} h={'30px'} _hover={{transform: 'scale(1.1)'}}>
+                    <Image src={'sm/YouTube.png'} />
+                </Button>
             </Flex>
+            <Text px={'16px'} color={'#000'} mt={'16px'}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit animi pariatur assumenda iste ducimus blanditiis, dignissimos mollitia fugiat distinctio alias porro harum. Rerum nemo cumque quas ducimus voluptatem soluta repellendus?</Text>
+            <Button variant={'unstyled'} color={'#072D19'} _hover={{ color: '#000'}}>Learn More!</Button>
         </Flex>
     )
 }

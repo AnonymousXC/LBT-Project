@@ -10,7 +10,6 @@ const FixedBG = () => {
     useEffect(() => {
         document.querySelectorAll('.leaf-div > div > img').forEach((el) => {
             el.addEventListener('load', () => {
-                console.log('Loaded')
                 el.style.display = 'block'
             })
         })
