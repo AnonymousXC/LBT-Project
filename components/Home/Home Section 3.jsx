@@ -5,10 +5,14 @@ import {
     Image,
     Button,
     Heading,
+    Divider,
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from 'react';
+import Airtable from 'airtable';
+import { Table } from 'airtable';
 
 
 var sliderSetting = {
@@ -35,6 +39,15 @@ var sliderSettionTeam = {
 
 function Section3() {
 
+    const [ DBData, setDBData ] = useState()
+
+    // useEffect(() => {
+    //     fetchData(setDBData)
+    //     setInterval(() => {
+    //         console.log(DBData)
+    //     }, 2000)
+    // }, [])
+
     return (
         <Flex
             mt={'18px'}
@@ -52,6 +65,17 @@ function Section3() {
                     <SliderContentInstution img='https://i.ibb.co/t2XVhPh/Social-Shifters.png' />
                 </Slider>
             </Box>
+            <Divider mt={'20px'} backgroundColor={'fg-default'} width={'90%'} />
+            <Heading variant={'h2'} mt={'24px'}> Media Spotlight </Heading>
+            <Box w={'85%'} mt={'56px'}>
+                <Slider {...sliderSetting}>
+                    <SliderContentInstution img='https://i.ibb.co/8B0VcF2/Xartup.png' />
+                    <SliderContentInstution img='https://i.ibb.co/7JZBfPN/IAF.jpg' />
+                    <SliderContentInstution img='https://i.ibb.co/xzFFn1H/SCS.jpg' />
+                    <SliderContentInstution img='https://i.ibb.co/t2XVhPh/Social-Shifters.png' />
+                </Slider>
+            </Box>
+            <Divider mt={'20px'} backgroundColor={'fg-default'} width={'90%'} />
             <Heading variant={'h2'} mt={'47px'}> Meet our team! </Heading>
             <Box w={'85%'} mt={'50px'}>
                 <Slider {...sliderSettionTeam}>
@@ -107,6 +131,20 @@ function SliderContentTeam({name, position}) {
             <Button variant={'unstyled'} color={'#072D19'} _hover={{ color: '#000'}}>Learn More!</Button>
         </Flex>
     )
+}
+
+async function fetchData(setDBData)   {
+    Airtable.configure({
+        apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY
+    });
+    const base1 = await  Airtable.base('appXgN8LuyTPSXgAK')
+    await base1('Table 1').select().eachPage((records) => {
+        let data = []
+        records.forEach((record) => {
+            data.push(record._rawJson.fields)
+        })
+        setDBData(data)
+    })
 }
 
 export default Section3;

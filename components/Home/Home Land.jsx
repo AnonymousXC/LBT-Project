@@ -4,6 +4,7 @@ import {
     Heading,
     Divider,
 } from '@chakra-ui/react';
+import VideoPlayer from '@/components/Global/Video Player'
 
 function Home() {
     return (
@@ -24,18 +25,8 @@ function Home() {
                     #maketreesinteresting
                 </Heading>
             </Flex>
-            <Box
-            w={'90%'}
-            zIndex={100}
-            borderStyle={'solid'}
-            borderWidth={'5px'}
-            borderColor={'#15AB90'}
-            borderRadius={'15px'}
-            maxW={'800px'}
-            mb={'30px'}>
-                <iframe width="100%" height="auto" style={{ aspectRatio : '16 / 9', borderRadius : '10px' }} src="https://www.youtube.com/embed/GbxPHdgqDR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </Box>
-            <Divider w={'90%'} mb={'1rem'} flex='1' color={'fg-default'} />
+            <VideoPlayer source={'https://www.youtube.com/embed/GbxPHdgqDR4'} />
+            <Divider w={'90%'} mb={'1rem'} flex='1' backgroundColor={'fg-default'} />
         </Flex>
     )
 }
